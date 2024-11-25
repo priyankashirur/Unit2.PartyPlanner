@@ -34,7 +34,9 @@ function renderParties() {
     const card = document.createElement("li");
     card.innerHTML = `
        <h2>${party.name}</h2>
-       <img src="${party.imageUrl}" alt="${party.name}" />
+       <p>Date: ${new Date(party.date).toLocaleDateString()}</p>
+       <p>Time: ${party.time}</p>
+
        <p>${party.description}</p>
      `;
     return card;
