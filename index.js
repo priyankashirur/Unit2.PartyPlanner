@@ -43,6 +43,46 @@ function renderParties() {
   partyList.replaceChildren(...eventCards);
 }
 
+async function addParty(event) {
+  event.preventDefault(); // Prevent the form from refreshing the page
+
+  // Get form values
+  const name = document.getElementById("name").value;
+  const date = document.getElementById("date").value;
+  const time = document.getElementById("time").value;
+  const location = document.getElementById("location").value;
+  const description = document.getElementById("description").value;
+
+  const newParty = { name, date, time, location, description };
+
+  try {
+    // Send the new party to the API
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newParty),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to add party: ${response.statusText}`);
+    }
+
+    const addedParty = await response.json();
+    console.log("Party added:", addedParty);
+
+    // Update the state and re-render
+    state.parties.push(addedParty);
+    renderParties();
+
+    // Reset the form
+    event.target.reset();
+  } catch (error) {
+    console.error("Error adding party:", error);
+  }
+}
+
 async function render() {
   await getParties();
   renderParties();
