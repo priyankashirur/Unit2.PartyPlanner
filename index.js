@@ -88,4 +88,7 @@ async function render() {
   renderParties();
 }
 
+const partyForm = document.getElementById("party-form");
+partyForm.addEventListener("submit", addParty);
+
 render();
