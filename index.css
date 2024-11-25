@@ -1,0 +1,15 @@
+header {
+  background-color: rgb(248, 169, 248);
+  border-radius: 5px;
+  text-align: center;
+  width: 1000px;
+}
+
+h2 {
+  text-decoration: underline;
+  padding: 10px;
+}
+
+#party-form {
+  padding: 10px;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Party Planner</h1>
+    </header>
+    <main>
+      <!--section to add parties-->
+      <section>
+        <h2>Add new Party:</h2>
+        <!--need to create form to add parties-->
+        <form id="party-form">
+          <!-- name portion: -->
+          <label for="name">Party Name:</label>
+          <input type="text" id="name" name="name" required />
+          <br />
+          <br />
+
+          <!-- date portion: -->
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required />
+
+          <!-- time portion: -->
+          <label for="time">Time:</label>
+          <input type="time" id="time" name="time" required />
+          <br />
+          <br />
+          <!-- location portion: -->
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" required />
+          <br />
+          <br />
+
+          <!-- description portion: -->
+          <label for="description">Description:</label>
+          <input type="text" id="description" name="description" required />
+
+          <!--submit portion: -->
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
+      <!-- section to display upcoming parties -->
+      <section id="party-list">
+        <h2>Upcoming Parties</h2>
+        <ul id="parties"></ul>
+      </section>
+    </main>
+  </body>
+</html>
