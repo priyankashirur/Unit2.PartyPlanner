@@ -15,7 +15,7 @@ async function getParties(params) {
     const response = await fetch(API_URL); //grab API database
     const parties = await response.json(); //turn it into json because everything is a string initially
     console.log("API Response:", parties); // Log the response
-    state.parties = parties; // store parties data in the state object
+    state.parties = parties.data; // store parties data in the state object
   } catch (error) {
     console.log(error);
   }
